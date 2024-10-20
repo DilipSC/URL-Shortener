@@ -38,7 +38,7 @@ app.post('/submit',async (req,res)=>{
     const shortid=id.rnd();
     console.log(shortid);
     console.log(longUrl);
-    const shortUrl=`http://localhost:${PORT}/${shortid}`
+    const shortUrl=shortid;
     res.json({shortUrl});
 
     const urlpush=await new urldata({
@@ -49,8 +49,12 @@ app.post('/submit',async (req,res)=>{
 
 });
 
-app.get('/:shortid',(req,res)=>{
+app.get('/:shortid',async (req,res)=>{
     const shortid=req.params.shortid;
+    const findurl=await urldata.findOne({shorturl: shortid});
+    if(findurl){
+        return res.redirect(findurl.longurl);
+    }  
     
 })
 
