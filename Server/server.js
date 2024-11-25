@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.urlencoded({extended: true}))
 app.use(express.json());
 
-mongoose.connect('mongodb://localhost:27017/urldata')
+mongoose.connect('mongodb+srv://dilipsc570:dilips004@cluster0.v36kr.mongodb.net/')
 .then(()=>{    console.log("connected to database");
 })
 .catch(err=>{
