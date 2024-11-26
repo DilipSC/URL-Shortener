@@ -13,7 +13,7 @@ export default function Main() {
         e.preventDefault();
 
         try {
-            const rurl = await fetch('https://url-shortener-1-l8gp.onrender.com/submit', {
+            const rurl = await fetch('https://url-shortener-40hb.onrender.com/submit', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -62,8 +62,8 @@ export default function Main() {
                 {surl && (
                     <div className="text-black mt-6 rounded-lg bg-white p-6">
                         <h3 className="font-bold">Shortened URL:</h3>
-                        <a href={`https://url-shortener-1-l8gp.onrender.com/${surl}`} target="_blank" rel="noopener noreferrer">
-                            {`https://url-shortener-1-l8gp.onrender.com/${surl}`}
+                        <a href={`https://url-shortener-40hb.onrender.com/${surl}`} target="_blank" rel="noopener noreferrer">
+                            {`https://url-shortener-40hb.onrender.com/${surl}`}
                         </a>
                     </div>
                 )}
